@@ -1,22 +1,26 @@
-let max = parseInt(prompt("Enter your max number"));
-
-while (!max) {
-    max = parseInt(prompt("Enter a valid max number"));
+let maximum = parseInt(prompt("Enter the maximum number!"));
+while (!maximum) {
+    maximum = parseInt(prompt("Enter a valid number!"));
 }
 
-let guess = prompt("Ok Start guessing");
-let x = Math.floor(Math.random() * max) + 1;
+const targetNum = Math.floor(Math.random() * maximum) + 1;
+
+let guess = parseInt(prompt("Enter your first guess!"));
 let attempts = 1;
 
-while (parseInt(guess) !== x) {
+while (parseInt(guess) !== targetNum) {
     if (guess === 'q') break;
     attempts++;
-    if (parseInt(guess) < x) {
-        guess = prompt("too low");
+    if (guess > targetNum) {
+        guess = prompt("Too high! Enter a new guess:");
     } else {
-        guess = prompt("too high");
+        guess = prompt("Too low! Enter a new guess:");
     }
-
 }
 
-console.log(`You win! the answer is ${x}, it took ${attempts} attempts`);
+if (guess === 'q') {
+    console.log("OK, YOU QUIT!")
+} else {
+    console.log("CONGRATS YOU WIN!")
+    console.log(`You got it! It took you ${attempts} guesses`)
+}
