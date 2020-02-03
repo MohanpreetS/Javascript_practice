@@ -12,7 +12,7 @@ const testScores = {
 }
 
 for (let person in testScores) {
-    console.log(`${person} scored ${testScores[person]}`);
+    console.log(`${person} scored  ${testScores[person]}`);
 }
 
 let total = 0;
