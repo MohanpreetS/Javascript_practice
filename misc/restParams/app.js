@@ -13,3 +13,5 @@ function raceResults(gold, silver, ...everyoneElse) {
     console.log(`SILVER MEDAL GOES TO: ${silver}`)
     console.log(`AND THANKS TO EVERYONE ELSE: ${everyoneElse}`)
 }
+
+raceResults("Adam", "Barb", "Calvin", "Dom", "Eve");
