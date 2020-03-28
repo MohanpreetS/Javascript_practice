@@ -14,3 +14,12 @@ tweetForm.addEventListener('submit', function (e) {
     tweetInput.value = '';
 });
 
+const addTweet = (username, tweet) => {
+    const newTweet = document.createElement('li');
+    const bTag = document.createElement('b');
+    bTag.append(username)
+    newTweet.append(bTag);
+    newTweet.append(`- ${tweet}`)
+    tweetsContainer.append(newTweet);
+}
+
