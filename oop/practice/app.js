@@ -30,6 +30,14 @@ class Color {
 		const { h, l } = this;
 		return `hsl(${h},100%, ${l}%)`;
 	}
-	
+	opposite() {
+		const { h, s, l } = this;
+		const newHue = (h + 180) % 360;
+		return `hsl(${newHue},${s}%, ${l}%)`;
+	}
 }
-
+const red = new Color(255, 67, 89, 'tomato');
+red.hsl();
+red.opposite();
+red.rgba(0.3);
+const white = new Color(255, 255, 255, 'white');
